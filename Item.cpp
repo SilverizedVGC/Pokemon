@@ -1,6 +1,6 @@
 #include "Item.h"
 
-Item::Item(string name, string desc, int val){
+Item::Item(string name, string desc, int val): itemName(name), itemDescription(desc), value(val){
 
 }
 
@@ -9,11 +9,11 @@ string Item::getItemName(){
 }
 
 string Item::getItemDescription(){
-    return itemDescription
+    return itemDescription;
 }
 
 int Item::getValue(){
-    return value
+    return value;
 }
   
 void Item::setItemName(string n){

@@ -1,43 +1,38 @@
 #include "Inventory.h"
 
-Inventory::Inventory(){
-    size = 0;
-}
+Inventory::Inventory(){}
 
 Inventory::Inventory(Item arr[], int s){
-    size = s;
+
     for(int i = 0; i < s; i++){
         inventory.push_back(arr[i]);
     }
 }
 void Inventory::addItem(Item item){
     inventory.push_back(item);
-    size++;
 }
 void Inventory::removeLastItem(){
     inventory.pop_back();
 }
 
 void Inventory::addItemAt(int idx, Item element){
-    if(inventory.max_size() == size){
-        inventory.resize(size*2);
+    if (idx < 0 || idx >= inventory.size() ) {
+        throw std::out_of_range("Index is out of bounds");;
     }
-    size++;
-    for(int j = size-1 ; j > idx; j--){
-        inventory[j] = inventory[j-1];
-    }
-    inventory[idx] = element;
+    inventory.insert(inventory.begin()+ idx, element);
+
 }
 
 void Inventory::removeItem(int idx){
-    for(int i = idx; i+1 > size; i++){
-        inventory[i] = inventory[i+1];
+    if (idx < 0 || idx >= inventory.size() ) {
+        throw std::out_of_range("Index is out of bounds");;
     }
-    size--;
+    inventory.erase(inventory.begin() + idx);
 }
 
 void Inventory::printIems(){
-    for(int i = 0; i < size; i++){
+    cout << inventory.size() << endl;
+    for(int i = 0; i < inventory.size(); i++){
         inventory.at(i).print();
     }
 }

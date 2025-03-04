@@ -7,7 +7,6 @@
 class Inventory{
 
 protected:
-    int size;
     vector<Item> inventory;
 
 public:
