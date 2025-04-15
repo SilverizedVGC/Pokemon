@@ -28,5 +28,5 @@ int ItemQueue::size(){
 }
 
 bool ItemQueue::isEmpty(){
-    return list.empty()
+    return list.empty();
 }
