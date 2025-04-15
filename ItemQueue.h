@@ -3,15 +3,17 @@
 #include "Item.h"
 #include <queue>
  
-
 class ItemQueue{
     private:
     queue<Item> list;
+    int s;
     public:
     ItemQueue();
-    void addItem();
-    void removeItem();
-    
+    void addItem(Item i);
+    Item removeItem();
+    Item front();
+    int size();
+    bool isEmpty();
 };
 
 #endif
