@@ -1,7 +1,9 @@
 #include "Item.h"
+#include "ItemQueue.h"
 #include "Inventory.h"
 #include "Move.h"
 
+#include <iostream>
 using namespace std;
 
 int main(){
@@ -24,4 +26,26 @@ int main(){
     
     m.undoAction();
     m.emptyActions();
+
+    cout << endl;
+
+    ItemQueue q;
+    
+    Item i1("Potion", "Healing Item", 1);
+    Item i2("Berry", "Healing Item", 2);
+    Item i3("Poke Ball", "Catching Item", 3);
+    Item i4("Fire Stone", "Evolution Item", 4);
+
+
+    q.addItem(i1);
+    q.addItem(i2);
+    q.addItem(i3);
+
+    q.removeItem();
+
+    q.addItem(i4);
+
+    cout << "Size of ItemQueue = " << q.size() << endl;
+
+    return 0;
 }
