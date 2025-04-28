@@ -17,6 +17,7 @@ public:
     void removeLastItem();
     void removeItem(int Idx);
     void printIems();
+    int findItem(string item);
 };
 
 #endif
